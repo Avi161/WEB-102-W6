@@ -1,11 +1,13 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const DogInfo = ({index, name, breed, life_span}) => {
+const DogInfo = ({ id, name, breed, life_span }) => {
     return (
-        <div key={index} className="dog-info">
+        <div className="dog-info">
             <h2>🐶 {name}</h2>
-            <h4>🐕 breed: {breed}</h4>
+            <h4>🐕 breed: {breed || "Unknown"}</h4>
             <h4>👶➡️👩➡️👵 {life_span}</h4>
+            <Link to={`/dogs/${id}`}>View Details →</Link>
         </div>
     )
 }
